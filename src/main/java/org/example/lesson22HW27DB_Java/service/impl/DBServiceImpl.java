@@ -16,9 +16,9 @@ public class DBServiceImpl implements LessonDao {
     }
 
     @Override
-    public List<Lesson> deleteLesson(Integer id) throws SQLException {
+    public void deleteLesson(Integer id) throws SQLException {
         DBQuery dbQuery = new DBQuery();
-        return dbQuery.deleteLesson(id);
+        dbQuery.deleteLesson(id);
     }
 
     @Override

@@ -13,12 +13,14 @@ public class Main {
         LessonDao lessonDao = new DBServiceImpl();
 
         do {
+            System.out.println("--------------------");
             System.out.println("Робота с БД:");
             System.out.println("1 - Додавання уроку");
             System.out.println("2 - Видалення уроку");
             System.out.println("3 - Отримати всі уроки");
             System.out.println("4 - Отримати урок по id");
             System.out.println("0 - exit");
+            System.out.println("--------------------");
 
             Integer num = sc.nextInt();
             sc.nextLine();

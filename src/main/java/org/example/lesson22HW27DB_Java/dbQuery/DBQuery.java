@@ -49,7 +49,7 @@ public class DBQuery {
         DataBaseConnection.close(connection);
         return result;
     }
-    public List<Lesson> deleteLesson(Integer id) throws SQLException {
+    public void deleteLesson(Integer id) throws SQLException {
         Connection connection = DataBaseConnection.getConnection();
         Statement statement = connection.createStatement();
 //        Перевірка чи є такий індекс
@@ -59,12 +59,10 @@ public class DBQuery {
         if (result.isEmpty()) {
             System.out.println("Index " + id + " missing!");
         }else {
-            result = Mapper.getAllLesson(resultSet);
             PreparedStatement preparedStatement = connection.prepareStatement(String.format(SQL_DELETE_LESSON, id));
             preparedStatement.execute();
             System.out.println("Урок з індексом N: " + id + " був видалений.");
         }
         DataBaseConnection.close(connection);
-        return result;
     }
 }
